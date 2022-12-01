@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../dist/main.css" />
+    <title>Document</title>
+  </head>
+  <body style="background-color: rgb(31, 158, 116)">
+    <main class="container mx-auto px-4">
+      <div class="flex justify-center img">
+        <img
+          class="w-2/4 flex justify-center"
+          src="./International_Pokémon_logo.svg.webp"
+          alt="pokemon"
+        />
+      </div>
+      <div class="inputs flex justify-center mt-10">
+        <form>
+          <input
+            id="input"
+            class="enabled:hover:border-gray-400 disabled:opacity-75 p-2 focus:outline-none rounded-xl w-64"
+            placeholder="Search..."
+            type="search"
+          />
+          <button class="bg-orange-800 p-2 text-zinc-100 rounded-lg">
+            Search
+          </button>
+        </form>
+      </div>
+      <div
+        class="cards sm:grid-cols-2 xl:grid-cols-4 grid grid-cols-1 grid-rows-1 gap-8 mt-20"
+      ></div>
+    </main>
+
+    <script src="./pokemons.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
