@@ -2,6 +2,7 @@ const elForm = document.querySelector("form");
 const elInput = document.querySelector("#input");
 const cards = document.querySelector(".cards");
 const elSelect = document.querySelector("#select");
+const elSort = document.querySelector("#sort");
 
 function renderItem(pok, reg = "") {
   cards.innerHTML = "";
@@ -16,7 +17,7 @@ function renderItem(pok, reg = "") {
               <p class="text-sky-100 rounded-full p-3 bg-red-600">${item.weight}</p>
               <p class="absolute top-0 right-0 rounded-full bg-yellow-600 p-2 ">${item.num}</p>
               </div>
-              <p>${item.weaknesses}</p>
+              <p class="text-purple-200">${item.weaknesses}</p>
     `;
     cards.appendChild(card);
   });
@@ -40,6 +41,30 @@ function renderSelect(pokemons) {
   });
 }
 
+function sortItem(pokemons, value) {
+  if (value == "a-z") {
+    pokemons.sort((a, b) => {
+      if (a.name > b.name) {
+        return 1;
+      } else if (b.name > a.name) {
+        return -1;
+      }
+      return 0;
+    });
+  }
+
+  if (value == "z-a") {
+    pokemons.sort((a, b) => {
+      if (a.name > b.name) {
+        return -1;
+      } else if (b.name > a.name) {
+        return 1;
+      }
+      return 0;
+    });
+  }
+}
+
 elForm.addEventListener("submit", (evt) => {
   evt.preventDefault();
 
@@ -52,6 +77,8 @@ elForm.addEventListener("submit", (evt) => {
   );
 
   if (elCartoonSearch.length > 0) {
+    sortItem(elCartoonSearch, elSort.value);
+    console.log(elSort.value);
     renderItem(elCartoonSearch);
   } else {
     alert("No such cartoon found!❌❌❌");

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./dist/main.css" />
+    <link rel="stylesheet" href="./src/style.css" />
     <title>Document</title>
   </head>
   <body style="background-color: rgb(31, 158, 116)">
@@ -20,12 +20,16 @@
         <form>
           <input
             id="input"
-            class="enabled:hover:border-gray-400 disabled:opacity-75 p-2 focus:outline-none rounded-xl w-64"
+            class="enabled:hover:border-gray-400 disabled:opacity-75 p-3 focus:outline-none rounded-xl w-64"
             placeholder="Search..."
             type="search"
           />
-          <select class="p-2" name="select" id="select">
-            <option selected value="all">All</option>
+          <select class="p-3 rounded-md" name="select" id="select">
+            <option selected value="All">All</option>
+          </select>
+          <select class="p-3 rounded-md" id="sort">
+            <option value="a-z">A-Z</option>
+            <option value="z-a">Z-A</option>
           </select>
           <button class="bg-orange-800 p-2 text-zinc-100 rounded-lg">
             Search
